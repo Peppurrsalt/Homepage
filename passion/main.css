@@ -1,20 +1,10 @@
-body {  
-    background-image: url(bwfrosting.jpg);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-attachment: fixed;
-    background-size: cover;
-    font-family:cursive;
-}
+body { font-family:cursive;}
 h1 {
     text-align: center; 
     font-weight: bold;  
     font-size: 50pt;
     color: rgb(59, 48, 48);
     background:rgba(255, 255, 255, 0.973);
-    border-style: dotted;
-    border-width: 5px;   
-    border-color: rgb(59, 48, 48); 
 }
 
 h2 {
@@ -22,8 +12,8 @@ h2 {
     font-weight: bold;  
     font-size: 35pt;
     color: rgb(255, 255, 255);
-    
-}
+
+    }
 
 .center-menu {
   text-align: center; /* Centers the <ul> */
@@ -42,24 +32,13 @@ h2 {
 }
 
 p {
-    background:rgba(116, 92, 108, 0.638);
     color:pink;
-    border:5px solid rgb(59, 48, 48);
-    padding:10px;
-    margin:15px;
     text-align: center;
 }
 
 p:hover {
     background: rgb(78, 55, 7);
     color:rgb(251, 247, 174);
-}
-
-.banner {
-    text-align:center;
-    font-size: 170%;
-    color:rgb(170, 214, 255);
-    border-style: dashed;
 }
 
 a{
@@ -84,10 +63,4 @@ a:hover {
 
 .ol-container {text-align: center; /* Centers the <ol> block */}
 
-    ol {
-    display: inline-block;   /* Makes the list shrink to its content width */
-    text-align: left;        /* Keeps the list items left-aligned */
-    padding-left: 0;         /* Optional: removes browser default indent */
-    }
-
-
+    

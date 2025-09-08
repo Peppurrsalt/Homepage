@@ -1,0 +1,119 @@
+body {
+    background-color: rgb(228, 199, 255);
+}
+
+img {
+    max-width: 100%;
+}
+
+.block {
+        background: rgb(255, 201, 210);
+        margin: 10px;
+        padding: 10px;
+    }
+
+.inline {
+    background-color: lightgoldenrodyellow;
+    /* inline elements, margin and padding dont function like they do with block elements */
+    margin:10px;
+    padding:10px;
+
+    /* width and height have no effect on inline elements */
+    width:100px;
+    height:100px;
+
+}
+
+.inline-block {
+    background-color: rgb(255, 106, 163);
+    display:inline-block;
+    margin:10px;
+    padding: 10px;
+
+    /* unline inline, inline-block can give width and height */
+    width:100px;
+    height:100px;
+}
+
+.content-box {
+    background-color: crimson;
+    padding: 40px;
+    border: 5px solid blueviolet;
+    margin:100px;
+
+    width:200px;
+    height:200px;
+    
+    
+    /*content-box incline prevent us from having height & width always at 100px; no content then block will be clear, margin will be all around the box*/
+}
+
+.border-box {
+    background-color: crimson;
+    padding: 40px;
+    border: 5px solid blueviolet;
+    margin:100px;
+
+    width:200px;
+    height:200px;
+
+    /* border-box includes the padding and border sizing in the total width and height of the element */
+    box-sizing:border-box;
+}
+
+.square {
+    background-color: blanchedalmond;
+    width:100px;
+    height:100px;
+    margin: 10px;
+}
+
+/*relative code take the dominace since it is under square vice versa if switched*/
+
+.relative {
+    background-color: burlywood;
+    position:relative;
+    top:-50px;
+    left:50px;
+    /*top or bottom & left or right pick only one from each*/
+}
+
+.fixed {
+    background-color: rgb(106, 0, 0);
+    position: fixed;
+    bottom:0px;
+    left:0px;
+    margin: 0px;
+
+}
+
+.sticky {
+    background-color: cadetblue;
+    position: sticky;
+    bottom:0px;
+}
+
+.absolute {
+    background-color: darkslateblue;
+    position: absolute;
+    top:1200px;
+    right:50px;
+}
+
+.smiley {
+    background-color: cornflowerblue;
+    width:200px;
+    height:200px;
+    margin:50px;
+    position: relative;
+}
+
+.eye {
+    background-color: bisque;
+    width:30px;
+    height:30px;
+    /*in order for the element to be positioned relative to its container, the container also needs to have a position value*/
+    position:absolute;
+    left:50px;
+    right:50px;
+}
