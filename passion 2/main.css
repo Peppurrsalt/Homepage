@@ -1,0 +1,132 @@
+.center-menu {
+  text-align: center; /* Centers the <ul> */
+}
+
+.center-menu ul {
+  display: inline-block;  /* Makes the list shrink to its content so it can be centered */
+  padding: 0;
+  margin: 0;
+  list-style-type: none;  
+}
+
+.center-menu li a {
+  color: rgb(248, 255, 143);           
+  font-size: 18px;
+}
+
+.banner {
+    text-align:center;
+    font-size: 170%;
+    color:rgb(170, 214, 255);
+    border-style: dashed;
+}
+
+a{
+    color: pink;
+    text-decoration:none;
+    font-style:italic;
+    font-weight:bold;
+}
+
+a:hover {
+    color: rgb(248, 248, 191);
+
+}
+
+.list-container {text-align: center;}
+
+    ul {
+     display: inline-block;
+      text-align: left; /* Keeps the list items left-aligned inside the centered list */
+     padding-left: 0;  /* Removes browser's default indent */
+    }
+
+.ol-container {text-align: center; /* Centers the <ol> block */}
+
+    ol {
+    display: inline-block;   /* Makes the list shrink to its content width */
+    text-align: left;        /* Keeps the list items left-aligned */
+    padding-left: 0;         /* Optional: removes browser default indent */
+    }
+
+
+
+
+
+
+/* Optional: removes browser default indent *//* Optional: removes browser default indent *//* Optional: removes browser default indent */
+/* Optional: removes browser default indent *//* Optional: removes browser default indent *//* Optional: removes browser default indent */
+/* Optional: removes browser default indent *//* Optional: removes browser default indent *//* Optional: removes browser default indent */
+
+
+
+p {
+    background:rgba(0, 0, 0);
+    color:rgb(59, 48, 48);
+    border:5px dotted rgb(59, 48, 48);
+    padding:10px;
+    margin:15px;
+    text-align: center;
+    font-size: 30px;
+}
+
+p:hover {
+    background: rgb(59, 48, 48);
+    color:rgb(0, 0, 0);
+     border:5px dotted rgb(255, 255, 255);
+}
+
+h1 {
+    text-align: center; 
+    font-weight: bold;  
+    font-size: 20pt;
+    color: rgb(255, 255, 255);
+    border-style: dotted;
+    border-width: 5px;   
+    border-color: rgb(255, 255, 255); 
+}
+
+body {  
+    background-image: url(cookiecover.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family:cursive;
+}
+
+img {
+    max-width: 100%;
+}
+
+.inline {
+    background-color: lightgoldenrodyellow;
+    /* inline elements, margin and padding dont function like they do with block elements */
+    margin:10px;
+    padding:10px;
+
+    /* width and height have no effect on inline elements */
+    width:100px;
+    height:100px;
+}
+
+.square {
+    background-color: blanchedalmond;
+    width:100px;
+    height:100px;
+    margin: 10px;
+}
+
+/*relative code take the dominace since it is under square vice versa if switched*/
+
+.fixed {
+    background-color: rgb(59, 48, 48);
+    position: fixed;
+    top: 0;
+    left: 0;
+    margin: 0;
+    width: 100vw;    
+    height: 13vh;    
+    z-index: -1;      
+}
+
+
+
