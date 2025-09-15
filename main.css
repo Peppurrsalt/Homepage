@@ -1,0 +1,12 @@
+img {
+    max-width:100%;
+}
+
+border-box {
+    box-sizing:border-box;
+}
+
+.li {
+    font-family: cursive;
+    color: pink;
+}

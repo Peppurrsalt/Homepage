@@ -1,0 +1,73 @@
+img {
+    max-width:100%;
+}
+
+
+border-box {
+    box-sizing:border-box;
+}
+
+
+h1 {
+    text-align: center; 
+    font-weight: bold;  
+    font-size: 20pt;
+    padding: 15px;
+    color: red;
+    font-family: fantasy; 
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  
+  /* gif background */
+  background-image: url('img/acid.GIF');
+  background-repeat: no-repeat;
+  background-size: cover, contain;      
+  background-attachment: fixed ; 
+  background-position: center center;
+  
+  color: white;
+  font-family: fantasy;
+}
+
+/* Shared button styles */
+.btn {
+  padding: 10px 20px;
+  background-color: olive;
+  color: tan;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+/* Hover effect */
+.btn:hover {
+  background-color: rgb(53, 43, 28);
+}
+
+/* Left button fixed to bottom left */
+.left-btn {
+  position: fixed;
+  bottom: 39px;
+  left: 20px;
+  z-index: 1000;
+}
+
+.top-btn {
+  position: fixed;
+  top: 39px;
+  left: 20px;
+  z-index: 1000;
+}
+
+/* Right button fixed to bottom right */
+.right-btn {
+  position: fixed;
+  bottom: 39px;
+  right: 20px;
+  z-index: 1000;
+}
+
