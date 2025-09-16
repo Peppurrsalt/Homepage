@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>specificity</title>
+        <link rel="stylesheet" href="main.css">
+
+        <!-- style you can add write css in here-->
+
+        <style>
+            header {
+                background: lightgray;
+            }
+
+        </style>
+    </head>
+
+    <body>
+        <h1>specificity</h1>
+    
+        <header style="background: lightgoldenrodyellow">
+            stylesheet specificity: <br> external < embedded < inline
+
+        </header>
+
+        <main class="class" id="id">
+            Identifier specificity: <br> tag < class < id
+
+        </main>
+
+        <footer>
+            Location specificity: <br> higher < lower
+
+        </footer>
+        
+    </body>
+</html>
