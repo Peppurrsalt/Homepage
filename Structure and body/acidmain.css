@@ -32,6 +32,10 @@ body {
   font-family: fantasy;
 }
 
+.button-container {
+  display: grid;
+}
+
 /* Shared button styles */
 .btn {
   padding: 10px 20px;
