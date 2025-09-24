@@ -1,0 +1,131 @@
+/* border-box {
+    box-sizing:border-box;
+} */
+body{
+    margin: 0;
+}
+
+img {
+    max-width:100%;
+}
+
+.square {
+    background-color: burlywood;
+    width: 200px;
+    height: 200px;
+    /* animation-name: test;
+    animation-duration: 4s;
+    animation-delay: 2s;
+    animation-iteration-count: 2;
+    animation-direction: alternate;
+    animation-timing-function:ease;
+    animation-timing-function: cubic-bezier(.08,.62.7,.29);
+    animation-fill-mode: both; */
+
+/* duration and delay -s -s 1 */
+    animation: test 4s 2s 1 alternate ease-in-out both;
+}
+
+@keyframes test {
+  0% {
+    background-color: red;
+    width:200px;
+    }
+  100% {
+    background-color: yellow;
+    width:600px;
+    }
+}
+
+.container {
+    background: #efccd2;
+    height: 100vh;
+    display:flex;
+    justify-content: space-evenly;
+    align-items:center;
+    position: relative;
+    overflow: hidden;
+}
+
+.circle {
+    background: #4b6091;
+    width: 15vw;
+    height:15vw;
+    border-radius: 50%;
+    animation: pulse 2s infinite alternate
+    ease-in-out;
+}
+
+@keyframes pulse {
+    0% {
+        background: #4b6091;
+        scale:1;
+    }
+    100% {
+        background: #ed3e09;
+        scale:1.4;
+    }
+}
+
+
+.box {
+    background-color: #4b6091;
+    width: 15vw;
+    height: 15vw;
+    animation: spin 4s infinite linear;
+    
+}
+
+@keyframes spin {
+    0%{
+        rotate:0;
+    }
+    100%{
+        rotate:360deg;
+    }
+}
+
+.mover {
+    background: #4b6091;
+    width:150px;
+    height:50px;
+    position: absolute;
+    bottom:0;
+    left:0;
+    animation: move 4s infinite ease-in-out;
+
+}
+
+@keyframes move {
+    0% {
+        /* left:-150px; */
+        translate:-150px;
+    }
+
+    45% {
+        rotate:0deg;
+     } 
+    50% {
+        rotate:180deg;
+    }
+    100% {
+        /* left:100vw; */
+        translate:101vw;
+        rotate:180deg;
+    }
+}
+
+.changer {
+    background:#4b6091;
+    width:15vw;
+    height: 15vw;
+    transition: background 4s,
+        border-radius 1s,
+        rotate 2s;
+}
+
+.changer:hover {
+    background:#ed3e09;
+    border-radius: 50%;
+    rotate:45deg;
+}
