@@ -16,7 +16,7 @@ img {
 }
 
 
-
+/* Background */
 .container {
     background: #80c5f2;
     height: 100vh;
@@ -26,7 +26,6 @@ img {
     position: relative;
     overflow: hidden;
 
-    /* Add animation */
     animation: colorChange 10s infinite linear;
 }
 
@@ -35,16 +34,8 @@ img {
     25%  { background: #a0e7e5; }
     50%  { background: #cefcd2; }
     75%  { background: #80f0da; }
-    100% { background: #80c5f2; } /* loops back to the start */
+    100% { background: #80c5f2; } 
 }
-
-
-
-
-
-
-
-
 
 
 
@@ -55,57 +46,80 @@ img {
 
 /* FLOWERS */
 
-.flower, .flower2, .flower3 {
+.flower, .flower2, .flower3, .flower4, .flower5, .flower6 {
     position: absolute;
-    width: 2vw;
-    height: 2vw;
+    width: 0.8vw;
+    height: 0.8vw;
     display: flex;
     justify-content: center;
     align-items: center;
     animation: spin 6s linear infinite;
+    transform-origin: center;
+    z-index: 5;
 }
 
-/* Positions for flower */
+/* Positions for flowers */
 .flower {
-    bottom: 25%;
-    left: 88%;
-    transform: translate(-50%, -50%);
+    bottom: 5%;
+    left: 50%;
 }
-/* BL flower */
 
 .flower2 {
-    top: 25%;
+    top: 5%;
     right: 50%;
-    transform: translate(50%, 50%);
 }
-/* BR flower */
-
 
 .flower3 {
-    bottom: 25%;     
-    left: 12%; 
-    transform: translate(50%, -50%);  
+    bottom: 50%;     
+    left: 5%; 
 }
-/* C flower */
 
+.flower4 {
+    top: 20%;
+    left: 20%;
+}
+
+.flower5 {
+bottom:20%;
+right:20%;
+}
+
+.flower6 {
+    top: 50%;
+    right: 10%;
+}
 
 /* Petals */
 .circle {
     background: #ffc7fa;
-    width: 2.5vw;
-    height: 2.5vw;
+    width: 1vw;
+    height: 1vw;
     border-radius: 50%;
     position: absolute;
     animation: colorPulse 4s infinite alternate ease-in-out;
 }
 
 /* Petal positions */
-.circle:nth-child(1) { transform: rotate(0deg)   translateY(-2.25vw); }
-.circle:nth-child(2) { transform: rotate(60deg)  translateY(-2.25vw); }
-.circle:nth-child(3) { transform: rotate(120deg) translateY(-2.25vw); }
-.circle:nth-child(4) { transform: rotate(180deg) translateY(-2.25vw); }
-.circle:nth-child(5) { transform: rotate(240deg) translateY(-2.25vw); }
-.circle:nth-child(6) { transform: rotate(300deg) translateY(-2.25vw); }
+.circle:nth-child(1) { transform: rotate(0deg)   translateY(-.90vw); }
+.circle:nth-child(2) { transform: rotate(60deg)  translateY(-.90vw); }
+.circle:nth-child(3) { transform: rotate(120deg) translateY(-.90vw); }
+.circle:nth-child(4) { transform: rotate(180deg) translateY(-.90vw); }
+.circle:nth-child(5) { transform: rotate(240deg) translateY(-.90vw); }
+.circle:nth-child(6) { transform: rotate(300deg) translateY(-.90vw); }
+
+/* Center circle that changes color from yellow to red */
+.center {
+    background: yellow;
+    width: 1.2vw;
+    height: 1.2vw;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: centerPulse 3s infinite alternate ease-in-out;
+    z-index: 10; /* ensure it’s above petals */
+}
 
 /* Base flower spin animation */
 @keyframes spin {
@@ -133,51 +147,54 @@ img {
     }
 }
 
-/* Hover animations for different spins */
-
-.flower:hover {
-    animation: spin-clockwise 8s linear infinite;
+/* Center pulse animation: yellow to red */
+@keyframes centerPulse {
+    0% {
+        background: rgb(228, 200, 99);
+    }
+    100% {
+        background: rgb(255, 118, 118);
+    }
 }
 
-/* Flower 2 - spins counter-clockwise */
-.flower2:hover {
-    animation: spin-counterclockwise 3s linear infinite;
-}
+/* Hover animations for fast spins */
 
-/* Flower 3 - spins fast clockwise */
+/* Flowers 1-3: fast counter-clockwise */
+.flower:hover,
+.flower2:hover,
 .flower3:hover {
-    animation: spin-fast 1.5s linear infinite;
+    animation: spin-fast-counterclockwise 1.5s linear infinite;
 }
 
-/* Spin clockwise animation */
-@keyframes spin-clockwise {
+/* Flowers 4-6: fast clockwise */
+.flower4:hover,
+.flower5:hover,
+.flower6:hover {
+    animation: spin-fast-clockwise 1.5s linear infinite;
+}
+
+/* Spin fast clockwise animation */
+@keyframes spin-fast-clockwise {
     from {
         transform: translate(-50%, -50%) rotate(0deg);
     }
     to {
-        transform: translate(-50%, -50%) rotate(360deg);
+        transform: translate(-50%, -50%) rotate(720deg);
     }
 }
 
-/* Spin counter-clockwise animation */
-@keyframes spin-counterclockwise {
+/* Spin fast counter-clockwise animation */
+@keyframes spin-fast-counterclockwise {
     from {
-        transform: translate(50%, 50%) rotate(0deg);
+        transform: translate(-50%, -50%) rotate(0deg);
     }
     to {
-        transform: translate(50%, 50%) rotate(-360deg);
+        transform: translate(-50%, -50%) rotate(-720deg);
     }
 }
 
-/* Spin fast clockwise animation */
-@keyframes spin-fast {
-    from {
-        transform: translate(50%, -50%) rotate(0deg);
-    }
-    to {
-        transform: translate(50%, -50%) rotate(720deg);
-    }
-}
+
+
 
 
 
@@ -194,34 +211,67 @@ img {
     position: relative;
     width: 100vw;
     height: 100vh;
+    z-index: 0;
 }
 
-/* Base pulse animation for all fish */
+/* Base pulse animation for all fish (applies to fish1–6) */
 .pulse-image {
     position: absolute;
-    width: 15vw; /* 50% bigger base size */
+    width: 20vw;
     transform-origin: center;
     animation: pulse 3s infinite alternate ease-in-out;
 }
 
+
 /* Position each fish individually */
 .fish1 {
-    top: 15%;
-    left: 10%;
-    transform: translate(-50%, -50%);
+    bottom: 0%;
+    left: 0%;
 }
 
 .fish2 {
-    top: 35%;
-    left: 60%;
-    transform: translate(-50%, -50%);
+    top: 0%;
+    right: 0%;
 }
 
 .fish3 {
-    top: 75%;
-    left: 40%;
-    transform: translate(-50%, -50%);
+    bottom: 0%;
+    right: 0;
 }
+
+.fish4 {
+    top: -10%;
+    left: 30%;
+}
+
+.fish5 {
+    top: 70%;
+    left: 10%;
+}
+
+.fish6 {
+    top: -5%;
+    left: -3%;
+}
+
+/* NEW FISH 7 */
+.fish7 {
+    bottom: -20%;
+    left: 30%;
+}
+
+/* NEW FISH 8 */
+.fish8 {
+    bottom: -10%;
+    right: 23%;
+}
+
+/* NEW FISH 9 */
+.fish9 {
+    top: -10%;
+    right: 10%;
+}
+
 
 @keyframes pulse {
     0% {
@@ -229,7 +279,7 @@ img {
         filter: brightness(100%);
     }
     50% {
-        transform: scale(3.15); /* 50% bigger pulse scale */
+        transform: scale(1.5); 
         filter: brightness(120%);
     }
     100% {
@@ -245,162 +295,6 @@ img {
 
 
 
-
-
-
-/* Reset and global */
-* {
-    box-sizing: border-box;
-}
-body {
-    margin: 0;
-    height: 100vh;
-}
-
-img {
-    max-width: 100%;
-}
-
-/* Background container */
-.container {
-    background: #80c5f2;
-    height: 100vh;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    position: relative;
-    overflow: hidden;
-    animation: colorChange 10s infinite linear;
-}
-
-/* Background animation */
-@keyframes colorChange {
-    0%   { background: #80c5f2; }
-    25%  { background: #a0e7e5; }
-    50%  { background: #cefcd2; }
-    75%  { background: #80f0da; }
-    100% { background: #80c5f2; }
-}
-
-/* FLOWERS */
-
-.flower, .flower2, .flower3 {
-    position: absolute;
-    width: 2vw;
-    height: 2vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    animation: spin 6s linear infinite;
-    z-index: 5;
-
-}
-
-/* Positions for flower */
-.flower {
-    bottom: 25%;
-    left: 88%;
-    transform: translate(-50%, -50%);
-}
-
-.flower2 {
-    top: 25%;
-    right: 50%;
-    transform: translate(50%, 50%);
-}
-
-.flower3 {
-    bottom: 25%;     
-    left: 12%; 
-    transform: translate(50%, -50%);  
-}
-
-/* Petals */
-.circle {
-    background: #ffc7fa;
-    width: 2.5vw;
-    height: 2.5vw;
-    border-radius: 50%;
-    position: absolute;
-    animation: colorPulse 4s infinite alternate ease-in-out;
-}
-
-/* Petal positions */
-.circle:nth-child(1) { transform: rotate(0deg)   translateY(-2.25vw); }
-.circle:nth-child(2) { transform: rotate(60deg)  translateY(-2.25vw); }
-.circle:nth-child(3) { transform: rotate(120deg) translateY(-2.25vw); }
-.circle:nth-child(4) { transform: rotate(180deg) translateY(-2.25vw); }
-.circle:nth-child(5) { transform: rotate(240deg) translateY(-2.25vw); }
-.circle:nth-child(6) { transform: rotate(300deg) translateY(-2.25vw); }
-
-/* Base spin */
-@keyframes spin {
-    from { transform: translate(-50%, -50%) rotate(0deg); }
-    to   { transform: translate(-50%, -50%) rotate(360deg); }
-}
-
-/* Color pulse animation */
-@keyframes colorPulse {
-    0%   { background: #ffc7fa; scale: 1; }
-    50%  { background: #fff3d1; scale: 1.2; }
-    100% { background: #fe94e4; scale: 1; }
-}
-
-/* Hover effects */
-.flower:hover {
-    animation: spin-clockwise 8s linear infinite;
-}
-
-.flower2:hover {
-    animation: spin-counterclockwise 3s linear infinite;
-}
-
-.flower3:hover {
-    animation: spin-fast 1.5s linear infinite;
-}
-
-@keyframes spin-clockwise {
-    from { transform: translate(-50%, -50%) rotate(0deg); }
-    to   { transform: translate(-50%, -50%) rotate(360deg); }
-}
-
-@keyframes spin-counterclockwise {
-    from { transform: translate(50%, 50%) rotate(0deg); }
-    to   { transform: translate(50%, 50%) rotate(-360deg); }
-}
-
-@keyframes spin-fast {
-    from { transform: translate(50%, -50%) rotate(0deg); }
-    to   { transform: translate(50%, -50%) rotate(720deg); }
-}
-
-/* FISHES */
-
-.pulse-container {
-    position: relative;
-    z-index: 5;
-    width: 100vw;
-    height: 100vh;
-}
-
-/* Fish pulse */
-.pulse-image {
-    position: absolute;
-    width: 15vw; /* 50% larger */
-    transform-origin: center;
-    animation: pulse 3s infinite alternate ease-in-out;
-}
-
-/* Fish placement */
-.fish1 { top: 15%; left: 10%; transform: translate(-50%, -50%); }
-.fish2 { top: 35%; left: 60%; transform: translate(-50%, -50%); }
-.fish3 { top: 75%; left: 40%; transform: translate(-50%, -50%); }
-
-@keyframes pulse {
-    0%   { transform: scale(1); filter: brightness(100%); }
-    50%  { transform: scale(3.15); filter: brightness(120%); }
-    100% { transform: scale(1); filter: brightness(100%); }
-}
 
 
 
@@ -421,46 +315,104 @@ img {
 
 .lilypad {
     position: absolute;
-    z-index: 5;
-    width: 10vw;
-    height: 10vw;
+    z-index: 4;
+    width: 4vw;
+    height: 4vw;
     border-radius: 50%;
-    transition: background 0.4s, transform 1s;
+    background: #235f27;
+    animation: lilypadColorPulse 6s infinite alternate ease-in-out;
+    transition: transform 1s ease, background 0.3s ease;
 }
 
+/* Pause the animation on hover to allow hover color to override */
+.lilypad:hover {
+    animation-play-state: paused;
+    transform: rotate(360deg);
+}
 
 /* Pad 1 */
 .lilypad1 {
-    top: 40%;
-    left: 20%;
-    background: #235f27;
+    top: 20%;
+    right: 0%;
 }
 .lilypad1:hover {
     background: #f75dff;
-    transform: rotate(360deg);
 }
 
 /* Pad 2 */
 .lilypad2 {
-    bottom: 10%;
+    top: 10%;
     left: 66%;
-    background: #235f27;
 }
 .lilypad2:hover {
     background: #ff563c;
-    transform: rotate(360deg);
 }
 
 /* Pad 3 */
 .lilypad3 {
-    top: 6%;
-    left: 80%;
-    background: #235f27;
+    bottom: 0%;
+    left: 10%;
 }
 .lilypad3:hover {
     background: #ff39ac;
-    transform: rotate(360deg);
 }
+
+/* Pad 4 */
+.lilypad4 {
+    bottom: 10%;
+    right: 0%;
+}
+.lilypad4:hover {
+    background: #53ffa5;
+}
+
+/* Pad 5 */
+.lilypad5 {
+    bottom: 2.5%;
+    right: 48%;
+}
+.lilypad5:hover {
+    background: #a9ff53;
+}
+
+/* Pad 6 */
+.lilypad6 {
+    top: 16%;
+    left: 18%;
+}
+.lilypad6:hover {
+    background: #53b5ff;
+}
+
+/* Pad 7 */
+.lilypad7 {
+    top: 20%;
+    left: 0%;
+}
+.lilypad7:hover {
+    background: #e4ff53;
+}
+
+/* Pad 8 */
+.lilypad8 {
+    top: 45.9%;
+    right: 8.8%;
+}
+.lilypad8:hover {
+    background: #ffb653;
+}
+
+/* Color Pulse Animation */
+@keyframes lilypadColorPulse {
+    0% {
+        background: #235f27; /* Dark green */
+    }
+    100% {
+        background: #b2f2bb; /* Light pastel green */
+    }
+}
+
+
 
 
 
@@ -498,7 +450,7 @@ img {
   left: 0;
   width: 100vw; /* full viewport width */
   height: 30px;
-  background: #a0e7e5;
+  background: #78e2df;
   border-radius: 100% 100% 0 0 / 50% 50% 0 0;
   animation: waveVertical 4s ease-in-out infinite;
   opacity: 0.3;
@@ -521,7 +473,7 @@ img {
   left: 0;
   width: 100vw; /* full viewport width */
   height: 30px;
-  background: #a0e7e5;
+  background: #50e1dd;
   border-radius: 100% 100% 0 0 / 50% 50% 0 0;
   animation: waveVertical 4s ease-in-out infinite;
   opacity: 0.3;
@@ -567,7 +519,7 @@ img {
   left: 0;
   width: 100vw; /* full viewport width */
   height: 30px;
-  background: #a0e7e5;
+  background: #78e2df;
   border-radius: 100% 100% 0 0 / 50% 50% 0 0;
   animation: waveVertical 4s ease-in-out infinite;
   opacity: 0.3;
@@ -590,7 +542,7 @@ img {
   left: 0;
   width: 100vw; /* full viewport width */
   height: 30px;
-  background: #a0e7e5;
+  background: #50e1dd;
   border-radius: 100% 100% 0 0 / 50% 50% 0 0;
   animation: waveVertical 4s ease-in-out infinite;
   opacity: 0.3;
@@ -636,7 +588,7 @@ img {
   left: 0;
   width: 100vw; /* full viewport width */
   height: 30px;
-  background: #a0e7e5;
+  background: #78e2df;
   border-radius: 100% 100% 0 0 / 50% 50% 0 0;
   animation: waveVertical 4s ease-in-out infinite;
   opacity: 0.3;
@@ -659,7 +611,7 @@ img {
   left: 0;
   width: 100vw; /* full viewport width */
   height: 30px;
-  background: #a0e7e5;
+  background: #50e1dd;
   border-radius: 100% 100% 0 0 / 50% 50% 0 0;
   animation: waveVertical 4s ease-in-out infinite;
   opacity: 0.3;
@@ -705,7 +657,7 @@ img {
   left: 0;
   width: 100vw; /* full viewport width */
   height: 30px;
-  background: #a0e7e5;
+  background: #78e2df;
   border-radius: 100% 100% 0 0 / 50% 50% 0 0;
   animation: waveVertical 4s ease-in-out infinite;
   opacity: 0.3;
@@ -728,7 +680,7 @@ img {
   left: 0;
   width: 100vw; /* full viewport width */
   height: 30px;
-  background: #a0e7e5;
+  background: #50e1dd;
   border-radius: 100% 100% 0 0 / 50% 50% 0 0;
   animation: waveVertical 4s ease-in-out infinite;
   opacity: 0.3;
@@ -774,7 +726,7 @@ img {
   left: 0;
   width: 100vw; /* full viewport width */
   height: 30px;
-  background: #a0e7e5;
+  background: #78e2df;
   border-radius: 100% 100% 0 0 / 50% 50% 0 0;
   animation: waveVertical 4s ease-in-out infinite;
   opacity: 0.3;
@@ -797,7 +749,7 @@ img {
   left: 0;
   width: 100vw; /* full viewport width */
   height: 30px;
-  background: #a0e7e5;
+  background: #50e1dd;
   border-radius: 100% 100% 0 0 / 50% 50% 0 0;
   animation: waveVertical 4s ease-in-out infinite;
   opacity: 0.3;
@@ -835,4 +787,57 @@ img {
   50% {
     transform: translateY(-50px); /* wave moves up by 20px */
   }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.center-text {
+    word-spacing: 1.5vw;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+    font-size: 2vw;
+    font-family: "liquida", sans-serif;
+    font-weight: 200;
+    font-style: normal;
+    
+    color: rgb(0, 85, 31);
+    animation: fadegreen 6s infinite ease-in-out;
+    
+    z-index: 1000;
+    text-align: center;
+    opacity: 0; /* ensure it starts invisible */
+}
+
+@keyframes fadegreen {
+    0% {
+        opacity: 2;
+        color: rgb(22, 93, 148);
+    }
+    10% {
+        opacity: 1;
+        color: rgb(85, 118, 207); /* fade in early */
+    }
+    40% {
+        color: rgb(0, 120, 255); /* blue */
+    }
+    70% {
+        color: rgb(146, 56, 207); /* purple */
+    }
+    100% {
+        opacity: 0;
+        color: rgb(214, 42, 159); /* fade out at the end */
+    }
 }
