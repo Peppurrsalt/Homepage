@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<head>
+  <title>What does this button do?</title>
+  <link rel="icon" href="favicon.png" type="image/png" />
+  <link rel="stylesheet" href="https://use.typekit.net/hot1bff.css">
+  <link rel="stylesheet" href="main.css" />
+</head>
+<body>
+
+  <!-- Top slide message -->
+  <div id="slideText"></div>
+
+  <!-- Bottom cat text -->
+  <h1 class="cat-text">
+    Please, don't press the cat!
+  </h1>
+
+  <div id="canvas">
+    <!-- Image slides -->
+    <img src="cat1.PNG" class="slide" />
+    <img src="cat2.PNG" class="slide" />
+    <img src="cat3.PNG" class="slide" />
+    <img src="cat4.PNG" class="slide" />
+    <img src="cat5.GIF" class="slide gif-bottom" />
+
+    <!-- Countdown overlay -->
+    <div id="countdownOverlay">5</div>
+  </div>
+
+  <script src="script.js"></script>
+
+
+  <img id="pinkBtn" src="audioicon.png" 
+       style="position: fixed; bottom: 10px; right: 10px; width: 40px; height: 40px; cursor: pointer; z-index: 10000; opacity: 0.8;" />
+
+  <img id="blueBtn" src="audioicon copy.png" 
+       style="position: fixed; bottom: 10px; left: 10px; width: 40px; height: 40px; cursor: pointer; z-index: 10000; opacity: 0.8;" />
+
+  <script>
+    const pinkBtn = document.getElementById('pinkBtn');
+    const blueBtn = document.getElementById('blueBtn');
+
+    pinkBtn.addEventListener('click', () => {
+      document.body.style.backgroundColor = '#ffc0cb';  // pink
+    });
+
+    blueBtn.addEventListener('click', () => {
+      document.body.style.backgroundColor = '#add8e6';  // light blue
+    });
+  </script>
+
+</body>
+</html>
+
+
+
