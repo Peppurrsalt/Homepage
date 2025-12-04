@@ -90,9 +90,9 @@ bgChangeBtn.addEventListener('click', () => {
     box.style.backgroundImage = `url('${backgrounds[bgIndex]}')`;
 });
 
-// ---------------------------
+
 // Audio control with image
-// ---------------------------
+
 const bgMusic = document.getElementById('bgMusic');
 const musicBtn = document.getElementById('musicBtn');
 let audioStarted = false;
