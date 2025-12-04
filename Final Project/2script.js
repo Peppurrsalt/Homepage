@@ -5,7 +5,7 @@ const restartBtn = document.getElementById('restartBtn');
 const bgChangeBtn = document.getElementById('bgChangeBtn');
 
 const droppedImages = [];
-const backgrounds = ['background.png', 'background2.png', 'background3.png'];
+const backgrounds = ['bg.png', 'bg2.png', 'bg3.png'];
 let bgIndex = 0;
 
 // Initial background
