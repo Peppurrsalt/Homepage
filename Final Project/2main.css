@@ -1,0 +1,156 @@
+body {
+margin: 0;
+font-family: "argent-pixel-cf", sans-serif;
+font-weight: 400;
+font-size: 50px;
+font-style: italic;
+background: url('00.png') no-repeat center/cover;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 20px;
+    color: #ffffff;
+}
+
+p {
+    font-size: 10px;
+    position: fixed;
+    bottom: 0;
+    left: 5%;
+    transform: translateX(-50%);
+    color: #ffffff;
+}
+
+.container {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    height: 90vh;
+}
+
+.tabs-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.tab-buttons-top {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.tab-buttons-top button {
+    padding: 5px 10px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.tabs {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.tab {
+    width: 120px;
+    height: 35vh;
+    overflow-y: auto;
+    background: #b2dfdb;
+    padding: 10px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.tab h3 {
+    margin: 0 0 10px 0;
+    font-size: 14px;
+    text-align: center;
+    color: #004d40;
+}
+
+.tab img {
+    width: 100%;
+    border-radius: 10px;
+    cursor: grab;
+}
+
+.image-box {
+    flex: 1;
+    height: 100%;
+    background: url('background.png') center/cover no-repeat;
+    border: 5px solid rgb(4, 66, 35);
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden; 
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.image-box img {
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 10px;
+}
+
+.image-box.drag-over {
+    border-color: #ffffff;
+}
+
+#bgChangeBtn {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    padding: 5px 10px;
+    font-size: 12px;
+    cursor: pointer;
+    border-radius: 5px;
+    border: none;
+    background: rgba(0, 150, 136, 0.7);
+    color: white;
+}
+
+#bgChangeBtn:hover {
+    background: rgba(0, 150, 136, 0.9);
+}
+
+/* Music image button */
+#musicBtn {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    padding: 0;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    z-index: 10000;
+}
+
+#musicBtn img {
+    width: 40px;
+    height: 40px;
+}
+
+.icon-btn {
+    padding: 0;
+    border: none;
+    background: transparent;
+    width: 50px;   /* match Undo width area */
+    height: 30px;  /* match Undo height area */
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.icon-btn img {
+    width: 24px;   /* adjust to fit visually next to Undo */
+    height: 24px;
+}
+

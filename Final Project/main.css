@@ -1,0 +1,132 @@
+body {
+    margin: 0;
+}
+
+img {
+    max-width: 100%;
+}
+
+/* BACKGROUND: IMAGE UNDER GRADIENT ANIMATION */
+.container {
+    height: 100vh;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+
+    background-image: url('backdrop.png');
+    background-size: cover;
+    background-position: center;
+
+    animation: colorOverlay 10s infinite linear;
+}
+
+@keyframes colorOverlay {
+    0%   { background-color: rgba(128,197,242,0.5); }
+    25%  { background-color: rgba(44,157,95,0.5); }
+    50%  { background-color: rgba(206,252,210,0.5); }
+    75%  { background-color: rgba(128,240,218,0.5); }
+    100% { background-color: rgba(128,197,242,0.5); }
+}
+
+/* INTRO TEXT */
+.center-text {
+    word-spacing: 1.5vw;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 80px;
+    font-family: "bitcount-prop-double-square", sans-serif;
+    font-weight: 400;
+    color: rgb(255, 255, 255);
+    animation: fadeGreenThrice 3s ease-in-out 3 forwards; /* runs 3 times */
+    z-index: 50;
+    text-align: center;
+    opacity: 0;
+
+    /* optional glow */
+    text-shadow: 
+        0 0 20px rgba(255, 255, 255, 0.6),
+        0 0 40px rgba(255, 255, 255, 0.4),
+        0 0 70px rgba(255, 255, 255, 0.2);
+}
+
+@keyframes fadeGreenThrice {
+    0% { opacity: 0; }
+    25% { opacity: 1; }
+    75% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+/* SHOVEL BUTTON */
+#startButton {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100px;
+    height: 100px;
+    border: none;
+    background: url('shovel.png') no-repeat center center;
+    background-size: cover;
+    cursor: pointer;
+    opacity: 0;
+    z-index: 10000;
+    transition: opacity 1s ease;
+}
+
+#startButton.show {
+    opacity: 1;
+}
+
+/* LEAF SYSTEM (WRAPPER + IMAGE) */
+.pulse-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    z-index: 4;
+}
+
+/* Wrapper controls pulsing */
+.leaf-wrapper {
+    position: absolute;
+    animation: pulse 3s infinite alternate ease-in-out;
+}
+
+/* Leaf image spins on hover ONLY */
+.pulse-image {
+    width: 10vw;
+    transform-origin: center center;
+    cursor: pointer;
+    transition: transform 0.2s linear;
+}
+
+@keyframes pulse {
+    0%   { transform: scale(1); }
+    50%  { transform: scale(1.3); }
+    100% { transform: scale(1); }
+}
+
+/* Spin animation */
+@keyframes spinHover {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(360deg); }
+}
+
+/* Hover = spin only */
+.pulse-image:hover {
+    animation: spinHover 1s linear infinite;
+}
+
+/* LEAF POSITIONS */
+.leaf1 { bottom: 25%; left: 1%; }
+.leaf2 { top: 10%; right: 0%; }
+.leaf3 { bottom: 65%; right: 10; }
+.leaf4 { top: 5%; left: 23%; }
+.leaf5 { top: 70%; left: 10%; }
+.leaf6 { top: -5%; left: -3%; }
+.leaf7 { bottom: 78%; left: 70%; } 
+.leaf8 { bottom: 30%; right: 10%; } 
+.leaf9 { top: 2%; right: 40%; }
